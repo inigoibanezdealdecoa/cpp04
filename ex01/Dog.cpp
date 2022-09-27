@@ -3,6 +3,7 @@
 Dog::Dog()
 {
 	_type = "Dog";
+	_brain = new Brain();
 	std::cout << "A Dog has been created." << std::endl;
 }
 

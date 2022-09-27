@@ -3,6 +3,7 @@
 Cat::Cat()
 {
 	_type = "Cat";
+	_brain = new Brain();
 	std::cout << "A Cat has been created." << std::endl;
 }
 
