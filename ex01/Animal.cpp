@@ -2,13 +2,14 @@
 
 Animal::Animal()
 {
-	std::cout << "An Animal has been created" << std::endl;
+	_type = "Animal";
+	std::cout << "An Animal has been created with default constructor." << std::endl;
 }
 
-Animal::Animal(std::string type)
+Animal::Animal(const Animal& copy)
 {
-	_type = type;
-	std::cout << "An " << _type << " Animal has been created." << std::endl;
+	*this = copy;
+	std::cout << "Animal copy constructor called" << std::endl; // just to prove it works
 }
 
 Animal::~Animal()
@@ -16,17 +17,18 @@ Animal::~Animal()
 	std::cout << "An Animal has been deleted" << std::endl;
 }
 
-std::string Animal::getType() const
+const std::string Animal::getType() const
 {
 	return (_type);
 }
 
-void Animal::setType(std::string type)
-{
-	_type = type;
+Animal& Animal::operator=(const Animal &copy){
+	std::cout << "Dog asignment operator." << std::endl;
+	_type = copy._type;
+	return (*this);
 }
 
 void Animal::makeSound() const
 {
-	std::cout << "..." << std::endl;
+	std::cout << "This Animal has no specific Sound." << std::endl;
 }
