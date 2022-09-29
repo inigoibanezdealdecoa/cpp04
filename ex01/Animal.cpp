@@ -23,7 +23,7 @@ const std::string Animal::getType() const
 }
 
 Animal& Animal::operator=(const Animal &copy){
-	std::cout << "Dog asignment operator." << std::endl;
+	std::cout << "Animal asignment operator." << std::endl;
 	_type = copy._type;
 	return (*this);
 }
